@@ -1,0 +1,42 @@
+@font-face {
+    font-family: harryPotter;
+    src: url(HARRP.ttf);
+}
+
+h1 {
+    font-family: harryPotter;
+    margin-top: 20px;
+    font-size: 80px;
+    text-align: center;
+}
+
+footer {
+    clear: both;
+    text-align: center;
+    padding: 30px 0px;
+}
+
+/* body {
+    background: url(../images/harry-potter-wallpaper.png);
+    background: 
+} */
+
+.container {
+    border-left: solid black;
+    border-radius: 15px;
+}
+
+#question-set {
+    display: show;
+}
+
+.question {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 60px;
+}
+
+.btn-block {
+    width: 80%;
+    margin: auto;
+}
