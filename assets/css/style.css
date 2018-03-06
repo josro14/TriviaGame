@@ -3,40 +3,51 @@
     src: url(HARRP.ttf);
 }
 
-h1 {
-    font-family: harryPotter;
-    margin-top: 20px;
-    font-size: 80px;
-    text-align: center;
+h1, .jumbotron {
+	text-align: center;
+	font-family: harryPotter;
+	color: #fff;
 }
 
-footer {
-    clear: both;
-    text-align: center;
-    padding: 30px 0px;
+.jumbotron {
+    color: #B8A351;
+    background-color: rgb(124, 61, 111);
 }
 
-/* body {
-    background: url(../images/harry-potter-wallpaper.png);
-    background: 
-} */
-
-.container {
-    border-left: solid black;
-    border-radius: 15px;
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	text-align: center;
 }
 
-#question-set {
-    display: show;
+img {
+	width: 400px;
+	height: 400px;
 }
 
-.question {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-left: 60px;
-}
-
-.btn-block {
-    width: 80%;
-    margin: auto;
+.btn { 
+  color: #ffffff; 
+  background-color: #B8A351; 
+  border-color: #FFFFFF; 
+} 
+ 
+.btn:hover, 
+.btn:focus, 
+.btn:active, 
+.btn.active, 
+.open .dropdown-toggle.btn { 
+  color: #ffffff; 
+  background-color: #000000; 
+  border-color: #FFFFFF; 
+} 
+ 
+.btn:active, 
+.btn.active, 
+.open .dropdown-toggle.btn { 
+  background-image: none; 
+} 
+ 
+ 
+.btn .badge { 
+  color: #B8A351; 
+  background-color: #ffffff; 
 }

@@ -1,316 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    <title>Harry Potter Trivia Game</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <title>Trivia Game</title>
+
 </head>
 
 <body>
-    <div class="container">
 
-        <div class="titulo">
+    <div class="container">
+        <div class="jumbotron">
             <h1>Harry Potter Trivia</h1>
         </div>
-        <div class="timer">
-            <span>Time Left:</span>
-            <br>
-            <span id="time">2:00</span>
-        </div>
-
-        <button type="button" id="start-button" class="btn btn-primary btn-lg btn-block">Start Game</button>
-        <div id="question-set">
-            <div class="q-1 question">
-                <h3>1. What is the name of Harry Potter's owl?</h3>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Hedwig
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-2" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Errol
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-3" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Crookshanks
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-4" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Dobby
-                    </label>
-                </div>
+        <row>
+            <div class="col-md-5"></div>
+            <div class="col-md-2">
+                <button type="button" class="btn start">Start</button>
             </div>
-            <div class="q-2 question">
-                <h3>2. What is the address of the Dursley home?</h3>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        12 Grimmauld Place
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-2" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        4 Privet Drive
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-3" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        3 Little Hangerton
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-4" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        34 Godric's Hollow
-                    </label>
-                </div>
+            <div class="col-md-5"></div>
+        </row>
+        <row>
+            <div class="col-md-12">
+                <h2>
+                    <div id="time-holder"></div>
+                </h2>
             </div>
-            <div class="q-3 question">
-                <h3>3. Which founder of Hogwarts created the Chamber of Secrets?</h3>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Godric Gryffindor
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-2" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Rowena Ravenclaw
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-3" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Zacharias Smith
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-4" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Salazar Slytherin
-                    </label>
-                </div>
+        </row>
+        <row>
+            <div class="col-md-12">
+                <h2>
+                    <div id="question-holder"></div>
+                </h2>
+                <h2>
+                    <div id="answer-holder"></div>
+                </h2>
             </div>
-            <div class="q-4 question">
-                <h3>4. What is the animagus form of Sirius Black?</h3>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Werewolf
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-2" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Stag
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-3" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Dog
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-4" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Hippogriff
-                    </label>
-                </div>
+        </row>
+        <row>
+            <div class="col-md-12">
+                <h2>
+                    <div id="choice-holder-1"></div>
+                </h2>
             </div>
-            <div class="q-5 question">
-                <h3>5. Which of these spells is used to open locked doors?</h3>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Alohamora
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-2" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Accio
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-3" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Expelliarmus
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-4" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Dissendium
-                    </label>
-                </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h2>
+                    <div id="correct-holder"></div>
+                </h2>
             </div>
-            <div class="q-6 question">
-                <h3>6. Which of the following is NOT a component of the Deathly Hallows?</h3>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Elder Wand
-                    </label>
+            <div class="col-md-4"></div>
+            <row>
+                <div class="col-md-12">
+                    <h2>
+                        <div id="choice-holder-2"></div>
+                    </h2>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-2" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Cloak of Invisibility
-                    </label>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <h2>
+                        <div id="incorrect-holder"></div>
+                    </h2>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-3" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Sorcerer's Stone
-                    </label>
+                <div class="col-md-4"></div>
+            </row>
+            <row>
+                <div class="col-md-12">
+                    <h2>
+                        <div id="choice-holder-3"></div>
+                    </h2>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-4" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Resurrection Stone
-                    </label>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <h2>
+                        <div id="unanswered-holder"></div>
+                    </h2>
                 </div>
-            </div>
-            <div class="q-7 question">
-                <h3>7. What form does Hermione's patronus take?</h3>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Rabbit
-                    </label>
+                <div class="col-md-4"></div>
+            </row>
+            <row>
+                <div class="col-md-12">
+                    <h2>
+                        <div id="choice-holder-4"></div>
+                    </h2>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-2" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Otter
-                    </label>
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h2>
+                        <div id="restart-holder"></div>
+                    </h2>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-3" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Stag
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-4" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Doe
-                    </label>
-                </div>
-            </div>
-            <div class="q-8 question">
-                <h3>8. What color were the flames of the Goblet of Fire?</h3>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Red
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-2" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Purple
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-3" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Yellow
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-4" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        Blue
-                    </label>
-                </div>
-            </div>
-            <div class="q-9 question">
-                <h3>9. Which day is Harry Potter's birthday?</h3>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        June 30th
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-2" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        July 15th
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-3" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        July 31st
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-4" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        August 25th
-                    </label>
-                </div>
-            </div>
-            <div class="q-10 question">
-                <h3>10. How many players are on the field at once during a Quidditch match?</h3>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        7
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-2" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        10
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-3" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        12
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="ans-4" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
-                        14
-                    </label>
-                </div>
-            </div>
-            <div class="row-6">
-                <button type="button" class="btn btn-success">Submit</button>
-            </div>
-        </div>
-
-
-
-
+                <div class="col-md-2"></div>
+            </row>
     </div>
-    <footer>
-        <p>© Copywrite 2018 Josh Roberts</p>
-    </footer>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+    <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
